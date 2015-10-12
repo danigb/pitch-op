@@ -1,0 +1,34 @@
+{
+  "name": "pitch-op",
+  "version": "0.1.0",
+  "description": "Music pitch operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "vows --spec test/*.js",
+    "docs": "docme README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danigb/pitch-op.git"
+  },
+  "keywords": [
+    "music",
+    "theory",
+    "pitch",
+    "interval",
+    "transpose"
+  ],
+  "author": "danigb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danigb/pitch-op/issues"
+  },
+  "homepage": "https://github.com/danigb/pitch-op#readme",
+  "devDependencies": {
+    "interval-parser": "^0.9.0",
+    "vows": "^0.8.1"
+  },
+  "dependencies": {
+    "pitch-fifths": "^0.1.0"
+  }
+}
