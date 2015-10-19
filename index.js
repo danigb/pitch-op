@@ -9,6 +9,8 @@ var op = {}
 /**
  * Get pitch class of a pitch.
  *
+ * @name pitchClass
+ * @function
  * @param {Array} pitch - the pitch
  * @return {Array} the pitch class of the pitch
  *
@@ -22,6 +24,8 @@ op.pitchClass = function (p) { return [p[0], p[1], null] }
  *
  * This function can be partially applied (Integer -> Array -> Array)
  *
+ * @name setOctave
+ * @function
  * @param {Integer} octave - the octave to set
  * @param {Array} pitch - the pitch
  * @return {Array} the pitch with the given octave
@@ -39,6 +43,8 @@ op.setOctave = function (num, p) {
 /**
  * Simplify interval (set the octave to 0)
  *
+ * @name simplify
+ * @function
  * @param {Array} interval - the interval
  * @return {Array} the simplified interval
  *
@@ -52,6 +58,8 @@ op.simplify = op.setOctave(0)
  *
  * This function can be partially applied (Integer -> Array -> Array)
  *
+ * @name setDefaultOctave
+ * @function
  * @param {Integer} octave - the octave number
  * @param {Array} pitch - the pitch
  *
@@ -67,8 +75,10 @@ op.setDefaultOctave = function (octave, pitch) {
 }
 
 /**
- * Get distance in semitones from C0 (or P1 if interval)
+ * Get distance in semitones from `[0, 0, 0]` (`'C0'` or `'1P'`)
  *
+ * @name semitones
+ * @function
  * @param {Array} pitch - the pitch or interval
  * @return {Integer} the distance
  *
@@ -81,8 +91,10 @@ op.semitones = function (i) { return i ? SEMITONES[i[0] % 7] + i[1] + 12 * i[2] 
 /**
  * Get a comparator to sort pitches by height (frequency)
  *
- * @param {Boolean} descending - set to true if want a descending comparator
- * @param {function} the comparator function
+ * @name comparator
+ * @function
+ * @param {Boolean} descending - set to `true` if want a descending comparator
+ * @return {Function} the comparator function
  *
  * @example
  * arrayOfPitches.sort(op.comparator())
