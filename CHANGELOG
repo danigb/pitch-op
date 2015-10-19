@@ -1,6 +1,11 @@
 CHANGELOG
 
-[Master]
+[next]
+
+[0.2.0 not released]
+- Add semitones and comparator
+- Add setOctave, setDefaultOctave and simplify
+- Add pitchClass function
 
 [0.1.0]
 - First version (extracted from tonal)

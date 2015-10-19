@@ -1,6 +1,13 @@
 # pitch-op
 
-Music pitch operator. A fast and low level library to add/subtract/multiply pitches or intervals in [a-pitch](https://github.com/danigb/a-pitch) format.
+[![Build Status](https://travis-ci.org/danigb/music-chord.svg?branch=master)](https://travis-ci.org/danigb/music-chord)
+[![Code Climate](https://codeclimate.com/github/danigb/music-chord/badges/gpa.svg)](https://codeclimate.com/github/danigb/music-chord)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![npm version](https://img.shields.io/npm/v/music-chord.svg)](https://www.npmjs.com/package/music-chord)
+[![license](https://img.shields.io/npm/l/music-chord.svg)](https://www.npmjs.com/package/music-chord)
+[![pitch-array](https://img.shields.io/badge/pitch--array-compatible-yellow.svg)](https://github.com/danigb/pitch-array
+
+Music pitch operator. A fast and low level library to add/subtract/multiply pitches or intervals in [pitch-array](https://github.com/danigb/pitch-array) format.
 
 ```js
 var op = require('pitch-op')
@@ -45,14 +52,14 @@ If you need for note pitch transpositions, look at [tonal](https://github.com/da
 <td class="type">
 <span class="param-type">Array</span>
 </td>
-<td class="description last"><p>one pitch or interval in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p></td>
+<td class="description last"><p>one pitch or interval in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p></td>
 </tr>
 <tr>
 <td class="name"><code>b</code></td>
 <td class="type">
 <span class="param-type">Array</span>
 </td>
-<td class="description last"><p>the other pitch or interval in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p></td>
+<td class="description last"><p>the other pitch or interval in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p></td>
 </tr>
 </tbody>
 </table>
@@ -62,13 +69,13 @@ If you need for note pitch transpositions, look at [tonal](https://github.com/da
 <li>
 <a href="https://github.com/danigb/pitch-op/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L16">lineno 16</a>
+<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L106">lineno 106</a>
 </li>
 </ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
-<p>both pitches or intervals added in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p>
+<p>both pitches or intervals added in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p>
 </div>
 <dl>
 <dt>
@@ -111,7 +118,7 @@ op.add([3, 0, 0], [4, 0, 0]) // => [0, 0, 1]</code></pre>
 <td class="type">
 <span class="param-type">Array</span>
 </td>
-<td class="description last"><p>the pitch or interval in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p></td>
+<td class="description last"><p>the pitch or interval in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p></td>
 </tr>
 </tbody>
 </table>
@@ -121,13 +128,13 @@ op.add([3, 0, 0], [4, 0, 0]) // => [0, 0, 1]</code></pre>
 <li>
 <a href="https://github.com/danigb/pitch-op/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L50">lineno 50</a>
+<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L142">lineno 142</a>
 </li>
 </ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
-<p>the pitch or interval multiplied in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p>
+<p>the pitch or interval multiplied in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p>
 </div>
 <dl>
 <dt>
@@ -163,14 +170,14 @@ op.multiply(2, [4, 0, 0]) // => [1, 0, 1]</code></pre>
 <td class="type">
 <span class="param-type">Array</span>
 </td>
-<td class="description last"><p>one pitch or interval in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p></td>
+<td class="description last"><p>one pitch or interval in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p></td>
 </tr>
 <tr>
 <td class="name"><code>b</code></td>
 <td class="type">
 <span class="param-type">Array</span>
 </td>
-<td class="description last"><p>the other pitch or interval in <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p></td>
+<td class="description last"><p>the other pitch or interval in <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p></td>
 </tr>
 </tbody>
 </table>
@@ -180,13 +187,13 @@ op.multiply(2, [4, 0, 0]) // => [1, 0, 1]</code></pre>
 <li>
 <a href="https://github.com/danigb/pitch-op/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L33">lineno 33</a>
+<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L124">lineno 124</a>
 </li>
 </ul></dd>
 </dl>
 <h5>Returns:</h5>
 <div class="param-desc">
-<p>both pitches or intervals substracted <a href="https://github.com/danigb/a-pitch">a-pitch</a> format</p>
+<p>both pitches or intervals substracted <a href="https://github.com/danigb/pitch-array">pitch-array</a> format</p>
 </div>
 <dl>
 <dt>
