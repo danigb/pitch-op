@@ -1,6 +1,6 @@
 {
   "name": "pitch-op",
-  "version": "0.2.1-pre",
+  "version": "0.2.1",
   "description": "Music pitch operations",
   "main": "index.js",
   "scripts": {
