@@ -180,7 +180,7 @@ Type
 <li>
 <a href="https://github.com/danigb/pitch-op/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L154">lineno 154</a>
+<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L151">lineno 151</a>
 </li>
 </ul></dd>
 </dl>
@@ -504,7 +504,7 @@ Type
 <li>
 <a href="https://github.com/danigb/pitch-op/blob/master/index.js">index.js</a>
 <span>, </span>
-<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L136">lineno 136</a>
+<a href="https://github.com/danigb/pitch-op/blob/master/index.js#L128">lineno 128</a>
 </li>
 </ul></dd>
 </dl>

@@ -10,18 +10,22 @@ function imul (m, a) { return interval(op.multiply(m, interval(a))) }
 vows.describe('pitch-op').addBatch({
   'pitchClass': function () {
     assert.deepEqual(op.pitchClass([1, 2, 3]), [ 1, 2, null ])
+    assert.equal(op.pitchClass(null), null)
   },
   'set octave': function () {
     assert.deepEqual(op.setOctave(2, [1, 2, 3]), [1, 2, 2])
     var src = [ [1, 2, 3], [4, 5, 6] ]
     assert.deepEqual(src.map(op.setOctave(2)), [ [ 1, 2, 2 ], [ 4, 5, 2 ] ])
+    assert.equal(op.setOctave(2, null), null)
   },
   'simplify interval': function () {
     assert.deepEqual(op.simplify([1, 2, 3]), [1, 2, 0])
+    assert.equal(op.simplify(null), null)
   },
   'default octave': function () {
     assert.deepEqual(op.setDefaultOctave(3, [1, 2, null]), [1, 2, 3])
     assert.deepEqual(op.setDefaultOctave(3, [1, 2, 0]), [1, 2, 0])
+    assert.deepEqual(op.setDefaultOctave(3, null), null)
     var src = [ [1, 2, null], [4, 5, 1] ]
     assert.deepEqual(src.map(op.setDefaultOctave(2)), [ [ 1, 2, 2 ], [ 4, 5, 1 ] ])
   },
@@ -54,6 +58,9 @@ vows.describe('pitch-op').addBatch({
     },
     'add descending intervals': function () {
       assert.equal(iadd('-2M', '-2M'), '-3M')
+    },
+    'null resilient': function () {
+      assert.equal(op.add(null, [1, 0, 0]))
     }
   },
   'subtract': {

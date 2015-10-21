@@ -17,7 +17,7 @@ var op = {}
  * @example
  * pitchClass([1, -2, 3]) // => [1, -2, nul]
  */
-op.pitchClass = function (p) { return [p[0], p[1], null] }
+op.pitchClass = function (p) { return p ? [p[0], p[1], null] : null }
 
 /**
  * Set octave of a pitch.
@@ -120,11 +120,16 @@ function add (a, b) {
   var octaves = a[1] === null || b[1] === null ? null : a[1] + b[1]
   return [fifths, octaves]
 }
-op.add = function (a, b) { return fifths.toPitch(add(fifths(a), fifths(b))) }
+op.add = function (a, b) {
+  if (!a || !b) return null
+  return fifths.toPitch(add(fifths(a), fifths(b)))
+}
 
 /**
  * Subtract two pitches or intervals. Can be used to find the distance between pitches.
  *
+ * @name subtract
+ * @function
  * @param {Array} a - one pitch or interval in [pitch-array](https://github.com/danigb/pitch-array) format
  * @param {Array} b - the other pitch or interval in [pitch-array](https://github.com/danigb/pitch-array) format
  * @return {Array} both pitches or intervals substracted [pitch-array](https://github.com/danigb/pitch-array) format
@@ -138,11 +143,16 @@ function subtract (a, b) {
   var octaves = a[1] !== null && b[1] !== null ? b[1] - a[1] : null
   return [fifths, octaves]
 }
-op.subtract = function (a, b) { return fifths.toPitch(subtract(fifths(a), fifths(b))) }
+op.subtract = function (a, b) {
+  if (!a || !b) return null
+  return fifths.toPitch(subtract(fifths(a), fifths(b)))
+}
 
 /**
  * Multiply a pitch or interval by a scalar
  *
+ * @name multiply
+ * @function
  * @param {Array} n - the scalar
  * @param {Array} a - the pitch or interval in [pitch-array](https://github.com/danigb/pitch-array) format
  * @return {Array} the pitch or interval multiplied in [pitch-array](https://github.com/danigb/pitch-array) format
@@ -151,9 +161,10 @@ op.subtract = function (a, b) { return fifths.toPitch(subtract(fifths(a), fifths
  * var op = require('pitch-op')
  * op.multiply(2, [4, 0, 0]) // => [1, 0, 1]
  */
-function multiply (m, a) {
-  return [m * a[0], a[1] === null ? null : m * a[1]]
+function multiply (m, a) { return [m * a[0], a[1] === null ? null : m * a[1]] }
+op.multiply = function (m, a) {
+  if (!a) return null
+  return fifths.toPitch(multiply(+m, fifths(a)))
 }
-op.multiply = function (m, a) { return fifths.toPitch(multiply(m, fifths(a))) }
 
 module.exports = op

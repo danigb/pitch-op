@@ -2,7 +2,10 @@ CHANGELOG
 
 [next]
 
-[0.2.0 not released]
+[0.2.1]
+- Add more resilience to nulls
+
+[0.2.0]
 - Add semitones and comparator
 - Add setOctave, setDefaultOctave and simplify
 - Add pitchClass function
